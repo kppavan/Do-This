@@ -16,8 +16,9 @@ app.use(express.static("public"));
 // To enable templating using ejs
 app.set("view engine", "ejs");
 
-mongoose.connect(process.env.ADMIN_ID);
+mongoose.connect(process.env.ADMIN_ID, { useNewUrlParser: true });
 // mongodb+srv://pavanprabhakar628:<password>@cluster0.xohbmrg.mongodb.net/?retryWrites=true&w=majority
+console.log(process.env.ADMIN_ID);
 
 const itemsSchema = mongoose.Schema({
   name: String,
