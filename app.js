@@ -1,10 +1,11 @@
-require("dotenv").config();
+const dot = require("dotenv");
 const express = require("express");
 const bodyParser = require("body-parser");
 
 const _ = require("lodash");
 const mongoose = require("mongoose");
 const app = express();
+dot.config().parsed;
 const port = 3000;
 
 // To parse data from form to server
@@ -18,7 +19,6 @@ app.set("view engine", "ejs");
 
 mongoose.connect(process.env.ADMIN_ID, { useNewUrlParser: true });
 // mongodb+srv://pavanprabhakar628:<password>@cluster0.xohbmrg.mongodb.net/?retryWrites=true&w=majority
-console.log(process.env.ADMIN_ID);
 
 const itemsSchema = mongoose.Schema({
   name: String,
