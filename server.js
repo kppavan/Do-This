@@ -16,9 +16,7 @@ app.use(express.static("public"));
 // To enable templating using ejs
 app.set("view engine", "ejs");
 
-mongoose.connect(
-  "mongodb+srv://pavanprabhakar628:X6EeRvJMn5FRNMoj@cluster0.xohbmrg.mongodb.net/todolistDB"
-);
+mongoose.connect(process.env.ADMIN_ID);
 // mongodb+srv://pavanprabhakar628:<password>@cluster0.xohbmrg.mongodb.net/?retryWrites=true&w=majority
 
 const itemsSchema = mongoose.Schema({
