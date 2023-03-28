@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>To Do List</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat:wght@100;400;900&family=Permanent+Marker&family=Sacramento&family=Ubuntu&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="/styles.css" />
+      </head>
+      
+      <body>
+        <div class="top-box">
+            <div class="dropdown">
+                <button class="dropbtn" value="Theme">Theme</button>
+                <div class="dropdown-content">
+                  <a id="def">Default</a>
+                  <a id="lig">Light</a>
+                  <a id="dar">Dark</a>
+                </div>
+              </div>
+ <div class="button-wrapper">
+      <button id="fixed-button" class="fixed-button">New List</button>
+      <div id="submit-form" class="submit-form">
+        <form>
+          <input type="text" id="input-text" name="input-text" class="newListField" placeholder="Enter List Name" maxlength="20" ><br><br>
+          <button class="subBtn">+ </button>
+          <span class="btnInst">Create List</span>
+          
+         
+        </form>
+      </div>
+    </div>
+        </div>
+ 
+        <div class=" box" , id="heading">
+          <h1>To-Do list</h1>
+        </div>
+        </div>
+        <div class="box">
+          <form action="/delete" method="post">
+            <div class="item">
+              <input type="checkbox" onchange="this.form.submit()" name="checkedItem" value="<%=item._id%> " />
+              <p>Eat food</p>
+            </div>
+            <input type="hidden" name="listName" value="<%=listType%>" />
+          </form>
+          <form action="/" method="post" class="input-frm">
+            <input type="text" name="toDo" autocomplete="off" placeholder="New item" required />
+            <button class="subBtn" type="submit" name="list" value="<%=listType%> ">+</button>
+          </form>
+        </div>
+        <footer>
+          <h4>Designed by @pavankp</h4>
+        </footer>
+        <script src="https://code.jquery.com/jquery-1.12.3.js" integrity="sha256-1XMpEtA4eKXNNpXcJ1pmMPs8JV+nwLdEqwiJeCQEkyc=" crossorigin="anonymous"></script>
+        <script src="/index.js"></script>
+    </body>
+</html>

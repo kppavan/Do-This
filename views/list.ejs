@@ -1,0 +1,74 @@
+<%- include("header") %>
+<div class="top-box">
+  <div class="left-side">
+    <div class="dropdown left-div">
+      <button class="dropbtn" value="Theme">Theme</button>
+      <div class="dropdown-content">
+        <a class="theme-tag" id="def">Default</a>
+        <a class="theme-tag" id="lig">Light</a>
+        <a class="theme-tag" id="dar">Dark</a>
+      </div>
+    </div>
+    <div class="left-div">
+      <a href="/newDoThis"
+        ><button class="dropbtn newListBtn">Created Lists</button>
+      </a>
+    </div>
+  </div>
+  <div class="right-side">
+    <div class="newBtn right-div rightC1">
+      <button class="dropbtn newListBtn" id="rmDiv">New List</button>
+    </div>
+    <div class="right-div">
+      <a href="/"><button class="dropbtn newListBtn">Home</button> </a>
+    </div>
+  </div>
+</div>
+
+<div class="form-container" id="new-list-form">
+  <form action="/new" method="post">
+    <input
+      type="text"
+      name="listName"
+      autocomplete="off"
+      placeholder="List Name"
+      required
+    />
+    <button class="subBtn" type="submit">+</button>
+  </form>
+</div>
+
+<div class="box" , id="heading">
+  <h1 id="listHeading"><%=listType%></h1>
+</div>
+
+<div class="box" , id="mainFrm">
+  <p>Do This</p>
+  <% for(let item of items) {%>
+  <form action="/delete" method="post">
+    <div class="item">
+      <input
+        type="checkbox"
+        onchange="this.form.submit()"
+        name="checkedItem"
+        value="<%=item._id%> "
+      />
+      <p><%= item.name %></p>
+    </div>
+    <input type="hidden" name="listName" value="<%=listType%>" />
+  </form>
+  <% } %>
+  <form action="/" method="post" class="input-frm">
+    <input
+      type="text"
+      name="toDo"
+      autocomplete="off"
+      placeholder="New item"
+      required
+    />
+    <button class="subBtn" type="submit" name="list" value="<%=listType%> ">
+      +
+    </button>
+  </form>
+</div>
+<%- include("footer") %>

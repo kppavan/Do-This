@@ -1,0 +1,17 @@
+<%- include("header") %>
+<div class="newBtn">
+  <a href="/"><button class="dropbtn newListBtn">Home</button> </a>
+</div>
+<div class="box" , id="heading">
+  <h1 id="listHeading">Created Lists</h1>
+</div>
+<div class="box" , id="mainFrm" style="text-align: center">
+  <% if (createdList.length === 0){%>
+  <P> No created Lists </P>
+  <% }else{%> 
+  <% createdList.forEach(list =>{ %>
+  <a href="/list/<%=list%> "> <p><%= list%></p> </a>
+  <% }) %>
+  <% } %>
+</div>
+<%- include("footer") %>
