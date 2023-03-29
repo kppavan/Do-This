@@ -18,7 +18,7 @@ app.use(express.static("public"));
 app.set("view engine", "ejs");
 
 mongoose.connect(process.env.ADMIN_ID, { useNewUrlParser: true });
-// mongodb+srv://pavanprabhakar628:<password>@cluster0.xohbmrg.mongodb.net/?retryWrites=true&w=majority
+
 
 const itemsSchema = mongoose.Schema({
   name: String,
